@@ -1,24 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "VOIDRUNNER: Overdrive Edition" },
+      { name: "description", content: "Pilot an upgradeable starfighter through asteroid sectors, elite threats, and cinematic boss battles." },
+      { property: "og:title", content: "VOIDRUNNER: Overdrive Edition" },
+      { property: "og:description", content: "A high-speed 3D deep-space arcade game with progression, abilities, and boss battles." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: VoidrunnerGame,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function VoidrunnerGame() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <main className="h-dvh w-full overflow-hidden bg-background">
+      <h1 className="sr-only">VOIDRUNNER: Overdrive Edition</h1>
+      <iframe
+        className="h-full w-full border-0"
+        src="/voidrunner.html"
+        title="Play VOIDRUNNER: Overdrive Edition"
+        allow="fullscreen; autoplay; gamepad"
       />
-    </div>
+    </main>
   );
 }
