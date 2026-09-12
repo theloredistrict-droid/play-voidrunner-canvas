@@ -2489,5 +2489,29 @@
 
 })();
 </script>
+<script>
+(function(){
+  function fsEl(){ return document.fullscreenElement || document.webkitFullscreenElement; }
+  function label(){
+    var on = !!fsEl(), t = on ? 'Exit Fullscreen' : 'Fullscreen';
+    ['fullscreen-btn','pause-fullscreen-btn'].forEach(function(id){
+      var b=document.getElementById(id); if(!b) return;
+      b.textContent=t; b.classList.toggle('is-on', on);
+    });
+  }
+  function toggle(){
+    var el=document.documentElement;
+    if(fsEl()){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); }
+    else { var r=el.requestFullscreen||el.webkitRequestFullscreen; if(r) r.call(el); }
+  }
+  ['fullscreen-btn','pause-fullscreen-btn'].forEach(function(id){
+    var b=document.getElementById(id); if(b) b.addEventListener('click', toggle);
+  });
+  document.addEventListener('fullscreenchange', function(){ label(); window.dispatchEvent(new Event('resize')); });
+  document.addEventListener('webkitfullscreenchange', function(){ label(); window.dispatchEvent(new Event('resize')); });
+  window.addEventListener('keydown', function(e){ if(e.key==='f'||e.key==='F'){ if(!/input|textarea/i.test((e.target&&e.target.tagName)||'')) toggle(); } });
+  label();
+})();
+</script>
 </body>
 </html>
