@@ -385,6 +385,61 @@
   body.compact-hud #radar-canvas,body.compact-hud .hint-bottom,body.compact-hud .status-pill{display:none!important}
   @media(max-width:760px){#ship-preview{pointer-events:none}#sector-intel{display:none}.pilot-strip{justify-content:center}.modifier-row{justify-content:center}.draft-grid{grid-template-columns:1fr}.draft-card{min-height:0}#combat-meters{right:4vw;bottom:18vh;width:145px}.hud-skills{width:165px}.launch-data{gap:.8rem}.cta-row{gap:.55rem}.btn{padding:.75rem 1rem}.panel-card{padding:1.4rem}.stat-rail{gap:.75rem}.stat b{font-size:.95rem}}
   @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+  /* ---------- FIT-TO-VIEWPORT / NO CLIPPING ---------- */
+  #home{
+    height:100dvh; max-height:100dvh;
+    align-items:center;
+    overflow-y:auto; overflow-x:hidden;
+    padding-top:max(3vh, env(safe-area-inset-top));
+    padding-bottom:max(3vh, env(safe-area-inset-bottom));
+    padding-left:max(5vw, env(safe-area-inset-left));
+    padding-right:max(5vw, env(safe-area-inset-right));
+    column-gap:2rem;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+  }
+  #home::-webkit-scrollbar{width:6px}
+  #home::-webkit-scrollbar-thumb{background:var(--line)}
+  .hero-left{ min-height:0; }
+  .hero-right{ min-height:0; height:auto; max-height:100%; }
+  #ship-preview{ flex:1 1 auto; min-height:120px; }
+
+  @media (max-height: 860px){
+    h1.title{ font-size:clamp(2.2rem, 6.2vw, 4.6rem); }
+    p.tagline{ margin-top:.6rem; font-size:.9rem; }
+    .cta-row{ margin-top:1rem; gap:.7rem; }
+    .cta-row.secondary{ margin-top:.5rem; }
+    .diff-select{ margin-top:.9rem; }
+    .btn{ padding:.7rem 1.3rem; font-size:.82rem; }
+    .btn.small{ padding:.45rem .85rem; font-size:.7rem; }
+    .hero-right{ gap:.5rem; }
+    .stat b{ font-size:1.05rem; }
+    .brand-eyebrow{ margin-bottom:.5rem; }
+  }
+  @media (max-height: 700px){
+    h1.title{ font-size:clamp(1.9rem, 5vw, 3.4rem); line-height:.95; }
+    p.tagline{ display:none; }
+    .title-wrap:after{ bottom:-1rem; font-size:.55rem; }
+    .diff-select{ margin-top:.7rem; }
+    .btn{ padding:.6rem 1.1rem; font-size:.78rem; }
+    .stat-rail{ padding-top:.5rem; gap:1rem; }
+    .stat b{ font-size:.95rem; }
+    #ship-preview{ min-height:90px; }
+  }
+  @media (max-height: 560px){
+    #ship-preview{ display:none; }
+    .brand-eyebrow, #diff-intel{ display:none; }
+  }
+
+  /* overlays and panels must never clip either */
+  .screen{ overflow-y:auto; padding:max(1.2rem, env(safe-area-inset-top)) 1.2rem max(1.2rem, env(safe-area-inset-bottom)); }
+  #controls-panel, #leaderboard-screen, #settings-panel, #skins-panel, #daily-panel, #profile-panel{
+    overflow-y:auto; padding:max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+  }
+  .panel-card{ max-height:min(85dvh, 100%); margin:auto; }
+
+  #fullscreen-btn.is-on{ border-color:var(--cyan); color:var(--cyan); }
 </style>
 </head>
 <body>
@@ -420,6 +475,7 @@
       <button class="btn ghost small" id="leaderboard-btn">Leaderboard</button>
       <button class="btn ghost small" id="settings-btn">Settings</button>
       <button class="btn ghost small" id="profile-btn">Pilot Profile</button>
+      <button class="btn ghost small" id="fullscreen-btn" type="button">Fullscreen</button>
     </div>
   </div>
   <div class="hero-right">
@@ -602,6 +658,7 @@
   <div class="btn-row">
     <button class="btn ghost small" id="pause-leaderboard-btn">Leaderboard</button>
     <button class="btn ghost small" id="pause-settings-btn">Settings</button>
+    <button class="btn ghost small" id="pause-fullscreen-btn" type="button">Fullscreen</button>
   </div>
 </div>
 
