@@ -506,7 +506,7 @@
 <!-- ===================== ARMORY / SKINS & UPGRADES PANEL ===================== -->
 <div id="skins-panel">
   <div class="panel-card">
-    <button class="panel-close" id="skins-close">&times;</button>
+    <button class="panel-close" aria-label="Close" id="skins-close">&times;</button>
     <h2>Armory & Upgrades</h2>
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:.8rem;">
       <div class="armory-tabs">
@@ -533,7 +533,7 @@
 <!-- ===================== DAILY / MILESTONES PANEL ===================== -->
 <div id="daily-panel">
   <div class="panel-card" style="width:min(500px,90vw);">
-    <button class="panel-close" id="daily-close">&times;</button>
+    <button class="panel-close" aria-label="Close" id="daily-close">&times;</button>
     <h2>Daily Missions & Rewards</h2>
     <p style="color:var(--ink-dim); font-size:.8rem; margin-bottom:1.2rem;">Complete flight objectives to claim Void Credits rewards.</p>
     <div id="daily-list"></div>
@@ -543,7 +543,7 @@
 <!-- ===================== PILOT PROFILE PANEL ===================== -->
 <div id="profile-panel">
   <div class="panel-card" style="width:min(640px,92vw);">
-    <button class="panel-close" id="profile-close">&times;</button>
+    <button class="panel-close" aria-label="Close" id="profile-close">&times;</button>
     <h2>Pilot Profile</h2>
     <div class="profile-tabs">
       <button class="profile-tab active" id="tab-ach-btn">Achievements</button>
@@ -561,7 +561,7 @@
 <!-- ===================== CONTROLS PANEL ===================== -->
 <div id="controls-panel">
   <div class="panel-card">
-    <button class="panel-close" id="panel-close">&times;</button>
+    <button class="panel-close" aria-label="Close" id="panel-close">&times;</button>
     <h2>Flight manual</h2>
     <div class="row"><span>Steer the hull</span><b>Mouse / Touch joystick</b></div>
     <div class="row"><span>Steer (alt)</span><b>Arrow keys / WASD</b></div>
@@ -583,7 +583,7 @@
 <!-- ===================== LEADERBOARD ===================== -->
 <div id="leaderboard-screen">
   <div class="panel-card lb-card">
-    <button class="panel-close" id="lb-close">&times;</button>
+    <button class="panel-close" aria-label="Close" id="lb-close">&times;</button>
     <h2>Leaderboard</h2>
     <div class="lb-header"><span>Rank</span><span>Pilot</span><span>Diff</span><span>Score</span></div>
     <div id="lb-list"></div>
@@ -593,7 +593,7 @@
 <!-- ===================== SETTINGS ===================== -->
 <div id="settings-panel">
   <div class="panel-card">
-    <button class="panel-close" id="settings-close">&times;</button>
+    <button class="panel-close" aria-label="Close" id="settings-close">&times;</button>
     <h2>Settings</h2>
     <div class="setting-row"><label>Music volume</label><input type="range" id="music-vol" min="0" max="1" step="0.05"></div>
     <div class="setting-row"><label>SFX volume</label><input type="range" id="sfx-vol" min="0" max="1" step="0.05"></div>
@@ -659,7 +659,7 @@
     <button class="fire-btn" id="fire-btn" type="button">FIRE</button>
   </div>
 </div>
-<button id="touch-pause-btn" class="touch-only" type="button">&#10073;&#10073;</button>
+<button id="touch-pause-btn" class="touch-only" type="button" aria-label="Pause">&#10073;&#10073;</button>
 
 <!-- ===================== PAUSE SCREEN ===================== -->
 <div class="screen" id="pause-screen">

@@ -3,13 +3,15 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VOIDRUNNER: Overdrive Edition" },
-      { name: "description", content: "Pilot an upgradeable starfighter through asteroid sectors, elite threats, and cinematic boss battles." },
-      { property: "og:title", content: "VOIDRUNNER: Overdrive Edition" },
-      { property: "og:description", content: "A high-speed 3D deep-space arcade game with progression, abilities, and boss battles." },
+      { title: "VOIDRUNNER: Overdrive Edition — Deep-space arcade combat" },
+      { name: "description", content: "Play VOIDRUNNER free in your browser: pilot an upgradeable starfighter through asteroid sectors, elite threats, and cinematic boss battles." },
+      { property: "og:title", content: "VOIDRUNNER: Overdrive Edition — Deep-space arcade combat" },
+      { property: "og:description", content: "Play VOIDRUNNER free in your browser: a high-speed 3D arcade shooter with progression, abilities, and boss battles." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://play-prime-canvas.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://play-prime-canvas.lovable.app/" }],
   }),
   component: VoidrunnerGame,
 });
