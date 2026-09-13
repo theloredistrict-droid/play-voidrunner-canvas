@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "VOIDRUNNER" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      
+      { name: "google-site-verification", content: "nBpcfi9j0sQ4NSI6KUdbYrk14rjvcRsXhV1f6EZAogI" },
     ],
     links: [
       {
