@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://play-prime-canvas.lovable.app/sitemap.xml
+Sitemap: https://play-voidrunner-canvas.lovable.app/sitemap.xml
