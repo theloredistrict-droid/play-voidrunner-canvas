@@ -1,14 +1,12 @@
 # void runner
 
-act as a expert HTML coder and apply more 30 features to this HTML game and make the starting of the game more beautiful and powerful
+ 
+ **Live app**: https://play-voidrunner-canvas.lovable.app
+              https://play-voidrunner-canvas.lovable.app
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://play-voidrunner-canvas.lovable.app
-
 ## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/acb1af92-7d0e-4674-8f1e-3767bc8f32e2).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
